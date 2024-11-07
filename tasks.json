@@ -1,0 +1,43 @@
+{
+    "version": "1.0.0",
+    "tasks": [
+      {
+        "label": "Compile and Run",
+        "type": "shell",
+        "command": "",
+        "args": [
+          "chmod",
+          "+x",
+          "${relativeFile}",
+          "&&",
+          "./${relativeFile}",        
+          "<",
+          "input.txt",
+          ">",
+          "output.txt",
+        ],
+        "presentation": {
+          "reveal": "silent"
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": {
+          "owner": "Shell",
+          "fileLocation": [
+            "relative",
+            "${workspaceRoot}"
+          ],
+          "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
+        }
+      }
+    ]
+    }
